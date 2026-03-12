@@ -20,8 +20,10 @@ After an agent completes an issue:
 3. If any git hook fails on the merge commit, the agent that authored the work
    fixes it in the worktree branch (re-commit, re-merge). The orchestrator may
    fix trivially small errors (1-2 lines) directly instead of re-dispatching.
-4. Orchestrator removes worktree and branch (`git worktree remove`,
-   `git branch -d`)
+4. Orchestrator removes worktree and deletes branch: `git worktree remove`,
+   then verify the branch is merged (`git branch --merged main | grep <branch>`)
+   and force-delete (`git branch -D`). Use `-D` instead of `-d` because `-d`
+   can falsely refuse after `--no-ff` merges.
 5. Close the beads issue with
    `bd close <id> --reason="<summary>. Commit: <hash>"` — the commit hash is the
    merge commit (or direct commit for non-worktree work). Never close an issue

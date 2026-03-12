@@ -47,11 +47,14 @@ is the main project root before dispatching.
 ### Worktree removal may need `--force`
 
 Untracked files (agent memory, test artifacts) prevent `git worktree remove`.
-Use `--force` when removing after a successful merge:
+Use `--force` when removing after a successful merge. Then verify the branch is
+merged before force-deleting — `git branch -d` can falsely refuse after
+`--no-ff` merges:
 
 ```sh
 git worktree remove --force .claude/worktrees/agent-abc123
-git branch -d worktree-agent-abc123
+git branch --merged main | grep worktree-agent-abc123  # verify merged
+git branch -D worktree-agent-abc123
 ```
 
 ## Merge Conflicts
