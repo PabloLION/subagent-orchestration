@@ -65,13 +65,21 @@ doubts. The user may have doubts of their own. Never skip showing an issue.
 
 ### Lookahead
 
+The orchestrator and user work **asynchronously**. While Claude Code fetches and
+presents the current issue, the user is already reviewing the lookahead issue
+from the previous message. This is the entire point of lookahead — it eliminates
+idle time for the user.
+
 Always keep **two issues visible** in the conversation: one for dispatch
 decision, one as lookahead. Present them **sequentially** (not batched tool
 calls): run `bd show` for the first issue, print its doubts immediately after,
 then run `bd show` for the second issue and print its doubts. This preserves the
-issue → doubts → issue → doubts flow. After user approves and the issue is
-dispatched, immediately present the next issue for approval with a new lookahead
-— never leave the user with zero issues to review.
+issue → doubts → issue → doubts flow.
+
+After user approves and the issue is dispatched, present the next issue for
+approval with a new lookahead. The user has already seen the lookahead — do NOT
+re-present it as if it was ignored. Promote the lookahead to the active issue
+and show a fresh lookahead behind it.
 
 For each issue shown, include: full issue details (`bd show`), all doubts (even
 minor ones), and whether it reaches 95% confidence. Raise every doubt you can
