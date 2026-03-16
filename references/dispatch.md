@@ -54,6 +54,9 @@ doubts. The user may have doubts of their own. Never skip showing an issue.
    the next issue. If a doubt references another issue, run `bd show` for that
    related issue inline (right where the doubt is stated). If no doubts, state
    "No doubts from orchestrator" explicitly.
+   For each doubt, present **options with a recommendation**: list possible
+   resolutions, mark the recommended one, and explain why. Do not just flag the
+   problem — help the user decide quickly.
 2. Invite the user to raise their own doubts: "Do you have any questions or
    concerns about this issue?" Then wait for the user's explicit go-ahead. Do
    not dispatch until the user gives a clear signal.
