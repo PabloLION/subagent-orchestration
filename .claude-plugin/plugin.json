@@ -1,0 +1,8 @@
+{
+  "name": "subagent-orchestration",
+  "version": "0.1.0",
+  "description": "Orchestration rules for multi-agent dispatch with beads, worktrees, and named agents. Installs rules into .claude/rules/orchestration/ for projects that use subagent workflows.",
+  "author": {
+    "name": "PabloLION"
+  }
+}
