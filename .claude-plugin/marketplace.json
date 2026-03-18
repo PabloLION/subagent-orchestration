@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "subagent-orchestration",
-      "source": "./",
+      "source": "./plugin",
       "description": "Orchestration rules for multi-agent dispatch with beads, worktrees, and named agents. Installs rules into .claude/rules/orchestration/ for projects that use subagent workflows.",
       "version": "0.1.0"
     }
