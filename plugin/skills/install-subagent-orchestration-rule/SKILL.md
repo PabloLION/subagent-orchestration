@@ -1,5 +1,4 @@
 ---
-name: install-subagent-orchestration-rule
 description: Install subagent orchestration rule into the current project. Copies orchestration reference files to ./.claude/rules/orchestration/ so the project supports multi-agent dispatch with beads, worktrees, and named agents.
 disable-model-invocation: true
 allowed-tools: Bash Read

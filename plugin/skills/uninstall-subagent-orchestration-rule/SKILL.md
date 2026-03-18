@@ -1,5 +1,4 @@
 ---
-name: uninstall-subagent-orchestration-rule
 description: Remove subagent orchestration rules from the current project. Deletes ./.claude/rules/orchestration/ and its contents.
 disable-model-invocation: true
 allowed-tools: Bash Read
