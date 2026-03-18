@@ -66,8 +66,8 @@ settings (see `agent-template.md`). Remaining agent responsibilities:
 ## Research vs Code Agents
 
 Some agents produce research reports, not code. Their output goes to
-`docs/agents/<agent-name>/research-output/` (tracked, merges with branch). Each
-named agent gets its own folder. Do NOT put research output in `.git-ignored/`
+`./docs/agents/<agent-name>/research-output/` (tracked, merges with branch). Each
+named agent gets its own folder. Do NOT put research output in `./.git-ignored/`
 inside a worktree — ignored files are not merged and get lost when the worktree
 is deleted. Orchestrator reviews research output and discusses with user.
 

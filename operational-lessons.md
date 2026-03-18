@@ -15,7 +15,7 @@ worktree branch is its own HEAD.
 
 ```sh
 # Wrong — inside worktree, merge does nothing
-cd .claude/worktrees/agent-abc123
+cd ./.claude/worktrees/agent-abc123
 git merge --no-ff worktree-agent-abc123  # "Already up to date"
 
 # Right — from main directory
@@ -25,19 +25,19 @@ git merge --no-ff worktree-agent-abc123  # Merge made
 
 ### Run `bun install` after merging worktree branches
 
-Worktrees have their own `node_modules/`. After merging a branch that changed
+Worktrees have their own `./node_modules/`. After merging a branch that changed
 `package.json` or lockfile, run `bun install` on main before running tests.
 Even without dependency changes, test failures after merge may indicate stale
-`node_modules/` — try `bun install` first.
+`./node_modules/` — try `bun install` first.
 
 ### Nested worktrees from stale paths
 
 Agents launched from within a (removed) worktree directory create deeply nested
-paths like `.claude/worktrees/agent-abc/.claude/worktrees/agent-def/`. This does
+paths like `./.claude/worktrees/agent-abc/./.claude/worktrees/agent-def/`. This does
 not break branch-based merges but leaves stale directories. Clean with:
 
 ```sh
-rm -rf .claude/worktrees/agent-*
+rm -rf ./.claude/worktrees/agent-*
 git worktree prune
 ```
 
@@ -52,7 +52,7 @@ merged before force-deleting — `git branch -d` can falsely refuse after
 `--no-ff` merges:
 
 ```sh
-git worktree remove --force .claude/worktrees/agent-abc123
+git worktree remove --force ./.claude/worktrees/agent-abc123
 git branch --merged main | grep worktree-agent-abc123  # verify merged
 git branch -D worktree-agent-abc123
 ```

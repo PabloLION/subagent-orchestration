@@ -1,6 +1,6 @@
 ---
 name: uninstall-subagent-orchestration-rule
-description: Remove subagent orchestration rules from the current project. Deletes .claude/rules/orchestration/ and its contents.
+description: Remove subagent orchestration rules from the current project. Deletes ./.claude/rules/orchestration/ and its contents.
 disable-model-invocation: true
 allowed-tools: Bash Read
 ---
@@ -12,9 +12,9 @@ To update, run this skill first then re-run the install skill.
 
 ## Steps
 
-1. Verify `.claude/rules/orchestration/` exists in the project root
+1. Verify `././.claude/rules/orchestration/` exists in the project root
 2. List the files that will be removed and confirm with the user
-3. Delete `.claude/rules/orchestration/` and its contents
+3. Delete `././.claude/rules/orchestration/` and its contents
 4. Report what was removed
 
 ## Files Removed

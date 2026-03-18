@@ -10,7 +10,7 @@ This ruleset assumes the following are set up in the project:
 
 - **beads** — git-backed issue tracker (`bd create`, `bd show`, `bd close`,
   `bd sync`). All task tracking goes through beads, not TodoWrite or markdown.
-- **Named agents** — defined in `.claude/agents/` per the template in
+- **Named agents** — defined in `./.claude/agents/` per the template in
   `agent-template.md`. Define agents before dispatching so their IDs survive
   compaction. Settings like `isolation`, `memory`, and `background` are
   configured in agent frontmatter, not as prose rules.

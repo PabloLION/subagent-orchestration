@@ -25,7 +25,7 @@ after completing work. Do NOT push — the orchestrator handles merges.
 
 ```csv
 Setting,Value,Why
-memory,project,Persistent memory at .claude/agent-memory/<name>/MEMORY.md — auto-loaded on each invocation
+memory,project,Persistent memory at ./.claude/agent-memory/<name>/MEMORY.md — auto-loaded on each invocation
 isolation,worktree,Isolated git worktree per dispatch — prevents file conflicts
 background,true,Runs concurrently — orchestrator continues discussing other issues
 ```
@@ -60,18 +60,18 @@ Don't write,Setting handles it
 
 ## File Location
 
-Place agent definitions at `.claude/agents/<name>.md` (project scope). These
+Place agent definitions at `./.claude/agents/<name>.md` (project scope). These
 are git-tracked and shared with the team.
 
 ## Persistence
 
 ### Definition
 
-`.claude/agents/<name>.md` — git-tracked, permanent.
+`./.claude/agents/<name>.md` — git-tracked, permanent.
 
 ### Memory
 
-`.claude/agent-memory/<name>/MEMORY.md` — persists across sessions. First 200
+`./.claude/agent-memory/<name>/MEMORY.md` — persists across sessions. First 200
 lines auto-loaded on each invocation. The agent builds knowledge over time:
 patterns, conventions, architectural decisions.
 
